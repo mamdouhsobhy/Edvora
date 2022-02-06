@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="MissingClass">
+
+    <LinearLayout
+        android:id="@+id/linTools"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/drawable_corner_offwhite"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/imgPencil"
+            android:layout_width="18dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:background="@color/offwhite"
+            android:scaleType="center"
+            android:src="@drawable/ic_pencil_black_18dp"
+            android:tint="@color/pencil"
+            tools:ignore="ContentDescription,UseAppTint" />
+
+        <ImageButton
+            android:id="@+id/imgArrow"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/offwhite"
+            android:scaleType="center"
+            android:src="@drawable/ic_arrow_top_right_black_18dp"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/imgSquare"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/offwhite"
+            android:scaleType="center"
+            android:src="@drawable/ic_square_outline_black_18dp"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/imgCircle"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/offwhite"
+            android:scaleType="center"
+            android:src="@drawable/ic_checkbox_blank_circle_outline_black_18dp"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/imgColor"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:background="@color/offwhite"
+            android:scaleType="center"
+            android:src="@drawable/ic_palette_black_18dp"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linTools">
+
+        <com.example.edvora.classes_views.DrawingView
+            android:id="@+id/main_VW_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+
+    </FrameLayout>
+
+    <com.thebluealliance.spectrum.SpectrumPalette
+        android:id="@+id/main_SP_select_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linTools"
+        app:spectrum_colors="@array/colors_plate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
